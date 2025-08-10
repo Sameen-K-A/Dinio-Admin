@@ -5,18 +5,12 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div className="[--header-height:calc(--spacing(14))]">
-      <SidebarProvider className="flex flex-col">
+    <SidebarProvider>
+      <AppSidebar variant="inset" />
+      <SidebarInset className="p-4">
         <SiteHeader />
-        <div className="flex flex-1">
-          <AppSidebar />
-          <SidebarInset>
-            <div className="p-4">
-              <Outlet />
-            </div>
-          </SidebarInset>
-        </div>
-      </SidebarProvider>
-    </div>
+        <Outlet />
+      </SidebarInset>
+    </SidebarProvider>
   );
 };

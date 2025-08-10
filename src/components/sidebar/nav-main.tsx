@@ -1,6 +1,7 @@
 import { SidebarGroup, SidebarMenu, SidebarMenuButton } from "@/components/ui/sidebar"
 import { useLocation, useNavigate } from "react-router-dom";
 import type { INavItem } from "@/types/general"
+import { LogOut } from "lucide-react";
 
 export function NavMain({ items }: { items: INavItem[] }) {
   const location = useLocation();
@@ -12,7 +13,7 @@ export function NavMain({ items }: { items: INavItem[] }) {
         {items.map((item: INavItem) => (
           <SidebarMenuButton
             asChild
-            isActive={item.to === location.pathname}
+            isActive={location.pathname.startsWith(item.to)}
             key={item.to}
             className="cursor-pointer py-5"
             onClick={() => navigate(item.to)}
@@ -23,6 +24,12 @@ export function NavMain({ items }: { items: INavItem[] }) {
             </span>
           </SidebarMenuButton>
         ))}
+        <SidebarMenuButton
+          className="cursor-pointer hover:bg-red-500/10 py-5 text-red-500 hover:text-red-600"
+        >
+          <LogOut strokeWidth={1.5} />
+          Logout
+        </SidebarMenuButton>
       </SidebarMenu>
     </SidebarGroup>
   )

@@ -9,6 +9,7 @@ import Analytics from "@/pages/Analytics"
 import Settings from "@/pages/Settings"
 import Subscription from "@/pages/Subscription"
 import NotFoundPage from "@/components/others/Error404"
+import RestaurantDetails from "@/pages/RestaurantDetails"
 
 export default function AppRouter() {
   return (
@@ -18,6 +19,7 @@ export default function AppRouter() {
         <Route path={ROUTE.DEFAULT} element={<Navigate to={ROUTE.DASHBOARD} replace />} />
         <Route path={ROUTE.DASHBOARD} element={<Dashboard />} />
         <Route path={ROUTE.RESTAURANTS} element={<Restaurants />} />
+        <Route path={ROUTE.RESTAURANT_DETAILS} element={<RestaurantDetails />} />
         <Route path={ROUTE.ANALYTICS} element={<Analytics />} />
         <Route path={ROUTE.SETTINGS} element={<Settings />} />
         <Route path={ROUTE.SUBSCRIPTION} element={<Subscription />} />

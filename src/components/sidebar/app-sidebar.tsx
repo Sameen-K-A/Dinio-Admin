@@ -1,8 +1,8 @@
 import { NavMain } from "@/components/sidebar/nav-main"
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar"
 import { ROUTE } from "@/routes/router"
 import type { INavItem } from "@/types/general"
-import { BarChart2, CreditCard, LayoutDashboard, Settings, Utensils } from "lucide-react"
+import { BarChart2, LayoutDashboard, Settings, Utensils } from "lucide-react"
 
 const navItems: INavItem[] = [
   {
@@ -25,26 +25,19 @@ const navItems: INavItem[] = [
     to: ROUTE.SETTINGS,
     icon: <Settings size={18} strokeWidth={1.5} />,
   },
-  {
-    label: "Subscription",
-    to: ROUTE.SUBSCRIPTION,
-    icon: <CreditCard size={18} strokeWidth={1.5} />,
-  },
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar
-      className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
-      {...props}
-    >
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <img
               src="/svgs/logo.svg"
-              alt="logo"
-              className="h-10 w-auto logo-img mt-3 mb-5 ml-1"
+              alt="Dinio Logo"
+              className="h-8 w-auto my-4 ml-2 logo-img"
+              draggable="false"
             />
           </SidebarMenuItem>
         </SidebarMenu>
@@ -52,14 +45,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={navItems} />
       </SidebarContent>
-      <SidebarFooter>
-        <SidebarMenu className="hover:bg-muted p-2 rounded-md">
-          <SidebarMenuItem className="flex gap-2 items-center text-red-500 cursor-pointer">
-            <CreditCard size={18} strokeWidth={1.5} />
-            <span className="text-sm">Logout</span>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
     </Sidebar>
   )
 };
