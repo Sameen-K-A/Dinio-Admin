@@ -30,7 +30,7 @@ export default function RestaurantDetailsInfo({ handleDownloadAll, restaurant }:
               </div>
               <div>
                 <label className="text-sm font-medium text-muted-foreground">Number of Tables</label>
-                <p className="text-center font-medium bg-primary p-2 px-3 w-fit mx-auto rounded-lg text-accent">{restaurant.numberOfTables}</p>
+                <p className="text-center font-medium">{restaurant.numberOfTables}</p>
               </div>
             </div>
 
