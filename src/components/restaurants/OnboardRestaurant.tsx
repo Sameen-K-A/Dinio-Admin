@@ -61,7 +61,7 @@ export default function OnboardRestaurant() {
       </DialogTrigger>
       <DialogContent
         showCloseButton={false}
-        className="p-4 pt-8"
+        className="p-4 pt-8 dark:bg-[#181818]"
       >
         <DialogHeader>
           <DialogTitle className="text-center">
@@ -77,7 +77,7 @@ export default function OnboardRestaurant() {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="max-h-[60vh] overflow-y-auto custom-scrollbar">
+        <div className="max-h-[50vh] overflow-y-auto custom-scrollbar">
           {currentStep === 1 && (
             <div className="grid gap-5 py-4">
               <div className="grid gap-1">
