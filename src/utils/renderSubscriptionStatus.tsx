@@ -18,5 +18,5 @@ export function renderSubscriptionStatus(expiryDate: string) {
     statusText = `Expired ${formatDistanceToNow(new Date(expiryDate), { addSuffix: true })}`;
   }
 
-  return <span className={`font-medium ${colorClass}`}>{statusText}</span>;
+  return <span className={`${colorClass}`}>{statusText}</span>;
 };

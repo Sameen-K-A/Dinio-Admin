@@ -16,7 +16,7 @@ export default function AppRouter() {
     <Routes>
       <Route path={ROUTE.LOGIN} element={<Login />} />
       <Route element={<Layout />}>
-        <Route path={ROUTE.DEFAULT} element={<Navigate to={ROUTE.DASHBOARD} replace />} />
+        <Route path={ROUTE.DEFAULT} element={<Navigate to={ROUTE.LOGIN} replace />} />
         <Route path={ROUTE.DASHBOARD} element={<Dashboard />} />
         <Route path={ROUTE.RESTAURANTS} element={<Restaurants />} />
         <Route path={ROUTE.RESTAURANT_DETAILS} element={<RestaurantDetails />} />

@@ -1,8 +1,12 @@
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { ROUTE } from "@/routes/router";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="grid gap-3">
@@ -11,7 +15,6 @@ function LoginForm() {
           id="email"
           type="email"
           placeholder="m@example.com"
-          required
         />
       </div>
       <div className="grid gap-3">
@@ -24,9 +27,13 @@ function LoginForm() {
             Forgot your password?
           </a>
         </div>
-        <Input id="password" type="password" required />
+        <Input id="password" type="password" />
       </div>
-      <Button type="submit" className="w-full">
+      <Button
+        type="button"
+        onClick={() => navigate(ROUTE.DASHBOARD)}
+        className="w-full"
+      >
         Login
       </Button>
     </>
