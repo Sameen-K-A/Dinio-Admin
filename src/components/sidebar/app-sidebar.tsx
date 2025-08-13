@@ -9,21 +9,25 @@ const navItems: INavItem[] = [
     label: "Dashboard",
     to: ROUTE.DASHBOARD,
     icon: <LayoutDashboard size={18} strokeWidth={1.5} />,
+    isAvailable: true
   },
   {
     label: "Restaurants",
     to: ROUTE.RESTAURANTS,
     icon: <Utensils size={18} strokeWidth={1.5} />,
+    isAvailable: true
   },
   {
     label: "Analytics",
     to: ROUTE.ANALYTICS,
     icon: <BarChart2 size={18} strokeWidth={1.5} />,
+    isAvailable: false
   },
   {
     label: "Settings",
     to: ROUTE.SETTINGS,
     icon: <Settings size={18} strokeWidth={1.5} />,
+    isAvailable: false
   },
 ];
 

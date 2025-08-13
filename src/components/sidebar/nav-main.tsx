@@ -15,8 +15,8 @@ export function NavMain({ items }: { items: INavItem[] }) {
             asChild
             isActive={location.pathname.startsWith(item.to)}
             key={item.to}
-            className="cursor-pointer py-5"
-            onClick={() => navigate(item.to)}
+            className={`cursor-pointer py-5 ${item.isAvailable ? "hover:bg-muted" : "bg-muted/20 cursor-not-allowed hover:bg-muted/20 text-muted-foreground hover:text-muted-foreground line-through"}`}
+            onClick={() => item.isAvailable && navigate(item.to)}
           >
             <span>
               {item.icon}
